@@ -13,4 +13,4 @@ jobs:
       run: |
         echo "${{ secrets.VM_SSH_KEY }}" > /tmp/ssh_key
         chmod 600 /tmp/ssh_key
-        ssh -i /tmp/ssh_key -o StrictHostKeyChecking=no kosbekokos@${{ secrets.VM_HOST }} "cd /home/kosbekokos/alyf_infra && git pull origin main && docker-compose restart airflow-scheduler airflow-webserver"
+        ssh -i /tmp/ssh_key -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} "cd /home/${{ secrets.VM_USER }}/ && git pull origin main"
