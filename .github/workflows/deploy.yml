@@ -21,4 +21,4 @@ jobs:
       run: |
         gcloud compute ssh airflow \
           --zone=us-central1-c \
-          --command="cd ~/ && git pull"
+          --command="cd /home/jo/airflow_dags && git pull"
